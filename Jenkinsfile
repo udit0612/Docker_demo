@@ -13,5 +13,15 @@ yum clean all'''
         sh 'docker build -t hello-world .'
       }
     }
+    stage('Push') {
+      steps {
+        echo '"./gradlew pushImage"'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'testing'
+      }
+    }
   }
 }
