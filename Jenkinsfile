@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('initialize') {
       steps {
-        sh '''service docker start
+        sh '''
 yum clean all
 '''
       }
