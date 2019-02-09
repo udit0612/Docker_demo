@@ -13,5 +13,15 @@ yum clean all
         sh 'docker build -t hello-world .'
       }
     }
+    stage('Push Image') {
+      steps {
+        echo '"Pushed docker image into the registry"'
+      }
+    }
+    stage('test') {
+      steps {
+        echo 'testing'
+      }
+    }
   }
 }
