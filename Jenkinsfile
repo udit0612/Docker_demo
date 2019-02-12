@@ -1,14 +1,18 @@
 pipeline {
-  agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent none 
     stages {
-        stage('Build') {
+        stage('Example Build') {
+            agent { docker 'maven:3-alpine' } 
             steps {
-                sh 'mvn -B'
+                echo 'Hello, Maven'
+                sh 'mvn --version'
+            }
+        }
+        stage('Example Test') {
+            agent { docker 'openjdk:8-jre' } 
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
             }
         }
     }
