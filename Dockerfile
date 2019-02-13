@@ -1,5 +1,5 @@
 FROM centos
 
-RU echo "hello world"
+RUN echo "hello world"
 
 CMD ["ls -lrt"]
